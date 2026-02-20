@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public float maxSpeed = 20f;
+    public float maxSpeed = 2000f;
 
 
     private Rigidbody rb;
