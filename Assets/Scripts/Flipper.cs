@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 public class Flipper : MonoBehaviour
 {
     public KeyCode key;               // Tecla asignada
@@ -9,10 +7,7 @@ public class Flipper : MonoBehaviour
     public float strength = 1000f;    // Fuerza del motor
     public float damper = 10f;
 
-
     private HingeJoint hinge;
-
-
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
@@ -22,21 +17,15 @@ public class Flipper : MonoBehaviour
         hinge.spring = spring;
         hinge.useSpring = true;
     }
-
-
     void Update()
     {
         JointSpring spring = hinge.spring;
-
 
         if (Input.GetKey(key))
             spring.targetPosition = pressedAngle;
         else
             spring.targetPosition = restAngle;
 
-
         hinge.spring = spring;
     }
 }
-
-

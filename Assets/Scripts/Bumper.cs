@@ -1,16 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Bumper : MonoBehaviour
 {
     public float force = 500f;
     public int points = 100;
 
-
     private void OnCollisionEnter(Collision collision)
     {
         Rigidbody rb = collision.rigidbody;
-
 
         if (rb != null)
         {
@@ -19,9 +17,7 @@ public class Bumper : MonoBehaviour
             rb.AddForce(-dir * force);
         }
 
-
         // Sumar puntos
         ScoreManager.Instance.AddPoints(points);
     }
 }
-
